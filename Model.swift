@@ -13,7 +13,7 @@ class Model {
     static let shared = Model()
     private init() {}
     
-    private(set) var movies = [String]()
+     var movies = [String]()
     
     
     func newMovie(_ movie: String){

@@ -20,7 +20,7 @@ class NewMoviesController: UIViewController {
     
     
     @IBAction func addMovie(_ sender: UIButton) {
-        guard let movie = textField.text, !movie.isEmpty else { return }
+        guard let movie = textField.text else { return }
         Model.shared.newMovie(movie)
         textField.text = nil
         

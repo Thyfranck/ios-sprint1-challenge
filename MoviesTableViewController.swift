@@ -19,16 +19,7 @@ class MoviesTableViewController: UITableViewController {
     
     
     
-    @IBAction func editTable(_ sender: Any) {
-        tableView.setEditing(true, animated: true)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(stopEditingTable(_:)))
-    }
-    
-    @objc
-    func stopEditingTable(_ sender: Any) {
-        tableView.setEditing(false, animated: true)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTable(_:)))
-    }
+
     
     
     
@@ -73,7 +64,18 @@ class MoviesTableViewController: UITableViewController {
     
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.reloadData()
+    
+    
     
     
 }
+    
+   
 
+}
